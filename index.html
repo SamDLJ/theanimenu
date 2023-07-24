@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		
+    <title>The AniMenu</title>
+		<!--link rel="stylesheet" href="style.css"-->
+		<!--script defer src="app.js">
+			
+		</script-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Codystar">
+		
+    <style>
+			
+			@import url('https://fonts.googleapis.com/css2?family-Poppins:wght@200;400;700&display=swap');
+			body {
+				background-color: #131316;
+				color: #ffffff;
+				font-family: 'Poppins', sans-serif;
+				padding: 0;
+				margin: 0;
+				
+				overflow-x: hidden;
+			}
+
+			section {
+				display: grid;
+				place-items: center;
+				align-content: center;
+				min-height: 100vh;
+	
+			}
+			.neon{
+			  /*font-family: 'Monoton', cursive;/**/
+			  font-size:100px;
+			  color: #00D5FF;
+			  /*position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);/**/
+			  font-weight: 400;
+			  letter-spacing: 8px;
+			  text-shadow: 1px 0px 4px #FFD5FF, 2px 0px 4px #00D5FF, 3px 0px 4px #00D5FF, 2px 0px 3px #D42C0A, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #011111,40px 0vw 200px #011111;
+			}
+
+			.flicker-slow{
+			  animation: flicker 7s linear infinite;
+			}
+			
+			.flicker-med{
+			  animation: flicker 5s linear infinite;
+			}
+
+			.flicker-fast{
+			  animation: flicker 2s linear infinite;
+			}
+
+			@keyframes flicker {
+				0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+					/*text-shadow: none;/**/
+			    opacity: .99;
+		
+				}
+				20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+					opacity: 0.1;
+				}
+			}
+			
+			li {
+				font-family: 'Hind', serif;
+				font-size: 30px;
+			}
+			
+			
+			
+        h1 {
+            text-align: center;
+        }
+				
+				h2 {
+					color: #888888;
+					font-weight: 10;
+					font-size: 3.5em;
+					transform: scale(1, 1.5);
+					font-family: 'Hind', serif;
+					white-space: nowrap;
+				}
+				
+				/*$rotationAmt: -12;*/
+				.textbox {
+					font-size: 20px;
+					inline-size: 50vw;
+				}
+				
+				.food {
+					font-family: 'Codystar', serif;
+					font-weight: 200;
+					font-size: 3.5em;
+					color: #00Dfff;
+					text-shadow: 1px 0px 4px #FFD5FF, 2px 0px 4px #00D5FF, 3px 0px 4px #00D5FF, 2px 0px 3px #D42C0A, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #011111,40px 0vw 200px #011111;
+				}
+				
+				.showtime {
+					
+				  transform: skew(-6deg) rotate(-6deg);
+				  grid-area: text;
+				  font-family: 'Sarpanch', sans-serif;
+				  font-size: 70px;
+				  margin: 0;
+				  padding: 30px;
+				  color: #00D5FF;
+				  text-shadow: 0.5vmin 0.5vmin 0 #000022, -0.5vmin -0.5vmin 0 #009944;
+					text-align: center;
+					font-family: 'Tektur', serif;
+					
+				}
+
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+				
+        .activity-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+				/*
+        .movie {
+            flex-basis: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            color: #fff;
+        }
+				/**/
+				
+				.movie {
+				            
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+						
+            flex-basis: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            
+						display: flex;/**/
+						/*display: grid;/**/
+						place-items: center;/**/
+						align-content: center;/**/
+						min-height: 40vh;/**/
+						/*              /**/
+            flex-direction: row-reverse;
+            align-items: center;
+            color: #fff;
+						
+						opacity: 0;
+						filter: blur(5px);
+						transform: translateX(-100%);
+						transition: all 1s;
+						height: 250px;
+				}
+
+        .movie img {
+            max-width: 400px;
+            height: 200px;
+            margin: 0 0px;
+        }
+
+        .movie-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        /* Alternate the alignment of images and info */
+        .movie:nth-child(even) {
+						transform: translateX(100%);
+            flex-direction: row;
+        }
+				
+        .show:nth-child(even) {
+						transform: translateX(0);
+					}
+
+        .movie:nth-child(even) .movie-details {
+            text-align: right;
+        }
+				
+				.hidden {
+					opacity: 0;
+					filter: blur(5px);
+					transform: translateX(-100%);
+					transition: all 1s;
+					/*height: 250px;/**/
+				}
+				
+				.show {
+          background-size: cover;
+          background-position: center;
+          color: #fff;
+          flex-basis: 100%;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          text-align: center;
+          margin-bottom: 10px;
+          
+					display: flex;/**/
+					/*display: grid;/**/
+					/*place-items: center;/**/
+					align-content: center;/**/
+					min-height: 20vh;/**/
+          flex-direction: row-reverse;
+          align-items: center;
+          color: #fff;
+					
+					opacity: 1;
+					filter: blur(0);
+					transform: translateX(0);
+					/*height: 250px;/**/
+				}
+				
+				@media(prefers-reduced-motion) {
+					.hidden {
+						transition: none;
+					}
+				}
+				
+				.infobox {
+					
+					background-color: #131316;
+          display: flex;
+					
+          justify-content: space-evenly;
+					
+				}
+				
+				.splitter {
+					
+					background-color: #131316;
+          display: flex;
+					
+          height: 50px;
+          justify-content: space-evenly;
+					
+				}
+				
+				
+				
+				
+				.activity {
+				    background: #eecc00;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            flex-basis: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            
+						display: flex;/**/
+						/*display: grid;/**/
+						/*place-items: center;/**/
+						align-content: center;/**/
+						min-height: 20vh;/**/
+						/*              /**/
+            flex-direction: row-reverse;
+            align-items: center;
+						height: 250px;
+            
+						
+					}
+					
+	        .activity img {
+	            max-width: 200px;
+	            height: auto;
+	            margin: 0 10px;
+	        }
+					
+	        .activity-details {
+	            flex: 1;
+	            display: flex;
+	            flex-direction: column;
+	            text-align: left;
+	        }
+					
+					
+				
+    </style>
+</head>
+<body>
+	
+		<h1 class="neon" data-text="U"> 
+			<span class="flicker-slow">The</span>
+			 A<span class="flicker-med">n</span>iM<span class="flicker-fast">e</span><span class="flicker-slow">nu</span>
+		</h1>
+	<div class="splitter"></div>	
+		<div class="infobox">
+        <div class="food"><span class="flicker-med">About</span></div>
+        <p class="textbox">Let's admit it, some of us get withdrawal from time to time (ok we're not 
+<a href="https://www.wikihow.com/Get-Over-an-Anime-Addiction" style="color: #0ff"><i style="color: #0ff">THAT</i></a>
+ bad).
+					<br>
+					<br>
+					Anime Movie night is July 30, this Sunday. 
+					<br>Be a nerd and bring a cool shirt.
+				</p>
+    </div>
+			<div class="splitter"></div>	
+			
+			<div class="splitter"></div>	
+		<div class="infobox">
+      
+      <div>
+				<li>popcorn</li>
+				<li>beer</li>
+				<li>chips</li>
+			</div>
+      	
+				
+			<div class="food"><span class="flicker-med">Food</span></div>
+			
+		</div>
+		<div class="splitter"></div>	
+	
+	
+	<div class="splitter"></div>	
+	<div class="food" style="text-align: center; color: #ff9">
+		<span class="flicker-med">
+			&#8595; &nbsp; NOW playing &nbsp; &#8595;
+		</span>
+	</div>
+		<div class="movie-details">
+		
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			
+			
+		</div>
+		
+		<div class="splitter"></div>
+		<div class="splitter"></div>
+		<div class="splitter"></div>
+	
+		<div class="movie-container">
+			
+	    <div class="movie" style="background-image: url('./images/background_image3.jpg');">
+	        <img src="images/piccolo.jpg" alt="Movie 3">
+	        <div class="movie-details">
+							<h2>DRAGONBALL Z</h2>
+							<h2></h2>
+	            <h4>Abridged: Season 1</h4>
+	            <p>(1989) Dragon Ball Z Abridged is a fan-made parody series by TeamFourStar that humorously condenses and reimagines the original Dragon Ball Z anime. Through witty writing and voice acting, it delivers a hilarious take on iconic characters and moments from the series while maintaining a deep respect for the source material. The parody highlights the epic battles, pop culture references, and inside jokes, making it an entertaining and nostalgic watch for Dragon Ball Z fans and newcomers alike.</p>
+							<div class="showtime">6:00 pm</div>
+	    		</div>
+					
+    	</div>
+			<div class="movie-details">
+			
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				
+			</div>
+			<div class="splitter"></div>
+			
+	    <div class="movie" style="background-image: url('./images/background_image1.jpg');">
+	        
+					<img src="images/suzume.jpg" alt="Movie 1">
+	        <div class="movie-details">
+	            <h2>SUZUME</h2>
+							<h2></h2>
+							<h2></h2>
+	            <p>(2022) Japanese animated fantasy film written and directed by Makoto Shinkai. It follows 17-year-old Suzume Iwato and young stranger Souta Munakata as they join forces to prevent disasters caused by a colossal, supernatural worm. Produced by CoMix Wave Films and distributed by Toho, the film received positive reviews for its animation, characters, emotional depth, and music. Despite criticism for its similarity to Shinkai's previous works, it became the fourth highest-grossing film of 2022 in Japan, grossing over $323.9 million worldwide.</p>
+							<div class="showtime">7:30 pm</div>
+	        </div>
+	    </div>
+			
+	    
+		
+			<div class="movie-details">
+			
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				<div class="splitter"></div>
+				
+				
+			</div>
+			<div></div>
+			
+	    <div class="movie" style="background: #eecc00" >
+			
+	        <img src="images/cuphead_mugman.jpg" alt="a1.jpg">
+	        <div class="activity-details">
+						
+							<h2>CUPHEAD</h2>
+							<h2></h2>
+							<h2></h2>
+							<p style="color: #000">
+								<b> 
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We made a deal with the Devil...
+								</b>
+							</p>
+	            <div class="showtime">10:00</div>
+	    		</div>
+    	</div>
+			
+    
+    <div class="activity-container">
+			
+		<div class="movie-details">
+		
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			
+			
+		</div>
+		    
+			
+  	</div>
+		
+    	
+		<div class="splitter"></div>
+		<div class="splitter"></div>
+		<div class="splitter"></div>
+		
+		</div>
+		<div class="food" style="text-align: center; color: #ff9">
+			<span class="flicker-med">
+				coming soon
+			</span>
+		</div>
+		<div class="movie">
+      <div class="movie-details">
+          <h3>Akira</h3>
+					<h3>Weathering with you</h3>
+					<h3>Neon Genesis: Evangelion</h3>
+      </div>
+		</div>
+    
+		<div class="movie-details">
+		
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			<div class="splitter"></div>
+			
+			
+		</div>
+    
+</body>
+<script>
+	const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				console.log(entry);
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show');
+				} else {
+					entry.target.classList.remove('show');
+				}
+			});
+	});
+
+	const hiddenElements = document.querySelectorAll('.movie');
+
+	hiddenElements.forEach((el) => observer.observe(el));
+</script>
+</html>
