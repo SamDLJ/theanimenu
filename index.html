@@ -73,19 +73,23 @@
 				font-size: 30px;
 			}
 			
-			
+			h3 {
+				text-align: center;
+			}
 			
         h1 {
             text-align: center;
         }
 				
 				h2 {
-					color: #888888;
+					color: #fff;
 					font-weight: 10;
 					font-size: 3.5em;
 					transform: scale(1, 1.5);
 					font-family: 'Hind', serif;
 					white-space: nowrap;
+					text-shadow: 1px 0px 4px #000, 2px 0px 4px #000, 3px 0px 4px #000, 2px 0px 3px #000, 2px 3px 15px #fff, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #000,40px 0vw 200px #000;
+					
 				}
 				
 				/*$rotationAmt: -12;*/
@@ -237,6 +241,7 @@
 					/*height: 250px;/**/
 				}
 				
+				
 				@media(prefers-reduced-motion) {
 					.hidden {
 						transition: none;
@@ -316,7 +321,7 @@
 	<div class="splitter"></div>	
 		<div class="infobox">
         <div class="food"><span class="flicker-med">About</span></div>
-        <p class="textbox">Let's admit it, some of us get withdrawal from time to time (ok we're not 
+        <p class="textbox">Let's admit it, some of us get withdrawal from time to time (we're not 
 <a href="https://www.wikihow.com/Get-Over-an-Anime-Addiction" style="color: #0ff"><i style="color: #0ff">THAT</i></a>
  bad).
 					<br>
@@ -364,16 +369,18 @@
 		<div class="splitter"></div>
 		<div class="splitter"></div>
 		<div class="splitter"></div>
-	
+		
 		<div class="movie-container">
 			
 	    <div class="movie" style="background-image: url('./images/background_image3.jpg');">
+				
 	        <img src="images/piccolo.jpg" alt="Movie 3">
 	        <div class="movie-details">
+							<p style="font-family: 'Codystar', serif; font-size: 20px">appetizer</p>
 							<h2>DRAGONBALL Z</h2>
-							<h2></h2>
+							
 	            <h4>Abridged: Season 1</h4>
-	            <p>(1989) Dragon Ball Z Abridged is a fan-made parody series by TeamFourStar that humorously condenses and reimagines the original Dragon Ball Z anime. Through witty writing and voice acting, it delivers a hilarious take on iconic characters and moments from the series while maintaining a deep respect for the source material. The parody highlights the epic battles, pop culture references, and inside jokes, making it an entertaining and nostalgic watch for Dragon Ball Z fans and newcomers alike.</p>
+	            (1989) Dragon Ball Z Abridged is a fan-made parody series by TeamFourStar that humorously condenses and reimagines the original Dragon Ball Z anime. Through witty writing and voice acting, it delivers a hilarious take on iconic characters and moments from the series while maintaining a deep respect for the source material. The parody highlights the epic battles, pop culture references, and inside jokes, making it an entertaining and nostalgic watch for Dragon Ball Z fans and newcomers alike.
 							<div class="showtime">6:00 pm</div>
 	    		</div>
 					
@@ -399,10 +406,9 @@
 	        
 					<img src="images/suzume.jpg" alt="Movie 1">
 	        <div class="movie-details">
+						<p style="font-family: 'Codystar', serif; font-size: 20px">Main course</p>
 	            <h2>SUZUME</h2>
-							<h2></h2>
-							<h2></h2>
-	            <p>(2022) Japanese animated fantasy film written and directed by Makoto Shinkai. It follows 17-year-old Suzume Iwato and young stranger Souta Munakata as they join forces to prevent disasters caused by a colossal, supernatural worm. Produced by CoMix Wave Films and distributed by Toho, the film received positive reviews for its animation, characters, emotional depth, and music. Despite criticism for its similarity to Shinkai's previous works, it became the fourth highest-grossing film of 2022 in Japan, grossing over $323.9 million worldwide.</p>
+	            (2022) Japanese animated fantasy film written and directed by Makoto Shinkai. It follows 17-year-old Suzume Iwato and young stranger Souta Munakata as they join forces to prevent disasters caused by a colossal, supernatural worm. Produced by CoMix Wave Films and distributed by Toho, the film received positive reviews for its animation, characters, emotional depth, and music. Despite criticism for its similarity to Shinkai's previous works, it became the fourth highest-grossing film of 2022 in Japan, grossing over $323.9 million worldwide.
 							<div class="showtime">7:30 pm</div>
 	        </div>
 	    </div>
@@ -433,21 +439,22 @@
 			
 	        <img src="images/cuphead_mugman.jpg" alt="a1.jpg">
 	        <div class="activity-details">
-						
-							<h2>CUPHEAD</h2>
-							<h2></h2>
-							<h2></h2>
+						<p style="font-family: 'Codystar', serif; font-size: 20px">dessert</p>
+							<h2>CUPHEAD<br><br></h2>
+							
+							
 							<p style="color: #000">
 								<b> 
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We made a deal with the Devil...
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Ok this is not anime--it's not even a movie. 
+									But we did make a deal with the Devil...
 								</b>
 							</p>
-	            <div class="showtime">10:00</div>
+	            <div class="showtime">10:00 pm</div>
 	    		</div>
     	</div>
 			
     
-    <div class="activity-container">
+    <div >
 			
 		<div class="movie-details">
 		
@@ -475,11 +482,13 @@
 				coming soon
 			</span>
 		</div>
-		<div class="movie">
-      <div class="movie-details">
+		<div class="splitter"></div>
+		<div >
+      <div class="movie-details" style="display: flex; align-content: center;">
           <h3>Akira</h3>
-					<h3>Weathering with you</h3>
+					<h3>Weathering With You</h3>
 					<h3>Neon Genesis: Evangelion</h3>
+					<h3>Paranoia Agent</h3>
       </div>
 		</div>
     
@@ -494,9 +503,11 @@
 			
 			
 		</div>
+	</div>
     
 </body>
 <script>
+	
 	const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				console.log(entry);
@@ -504,12 +515,13 @@
 					entry.target.classList.add('show');
 				} /*else {
 					entry.target.classList.remove('show');
-				} /**/
+				}*/
 			});
 	});
 
 	const hiddenElements = document.querySelectorAll('.movie');
 
 	hiddenElements.forEach((el) => observer.observe(el));
+	
 </script>
 </html>
